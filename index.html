@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<body>
+  <div id="container"></div>
+  <script>window.jQuery = window.$ = require('jquery');</script>
+  <script>
+    (function() {
+      const k = require("./vendor/assets/html5-cloud-sdk-v2.3.0.js");
+      const kii = k.create();
+      k.exportedClasses.map(e => global[e] = kii[e]);
+    })()
+  </script>
+  <script src="dist/bundle.debug.js"></script>
+</body>
