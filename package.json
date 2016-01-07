@@ -2,7 +2,7 @@
   "name": "kii-servercode-in-es6",
   "version": "0.0.1",
   "description": "",
-  "engines": [ "node": ">= 4" ],
+  "engines": { "node": ">= 4" },
   "main": "main.js",
   "scripts": {
     "start": "electron .",
