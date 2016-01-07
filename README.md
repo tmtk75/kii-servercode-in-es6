@@ -79,6 +79,8 @@ If you want to change it, `./debug.js` and `./release.js`.
 $ npm test
 ```
 
+Test files are in `./test` directory.
+
 
 ## Linting
 ```
