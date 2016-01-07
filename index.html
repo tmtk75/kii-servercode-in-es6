@@ -9,5 +9,26 @@
       k.exportedClasses.map(e => global[e] = kii[e]);
     })()
   </script>
-  <script src="dist/bundle.debug.js"></script>
+  <script>
+    require("./dist/bundle.debug.js");
+
+    const app = require("./server.js");
+    app.post("/api/apps/:app_id/server-code/versions/:version/:entryName", (req, res) => {
+      const app_id    = req.params.app_id;
+      const version   = req.params.version;
+      const entryName = req.params.entryName;
+
+      if (!EntryNames[entryName]) {
+        console.warn("missing entryName", entryName);
+        res.status(400).send({/* error response */});
+        return;
+      }
+
+      console.debug(app_id, version, entryName);
+      window.Launcher
+        .invoke(window.EntryNames[entryName], req.body)
+        .then(r => res.send(JSON.stringify(r)))
+        .catch(err => res.status(400).send(JSON.stringify(err)));
+    })
+  </script>
 </body>

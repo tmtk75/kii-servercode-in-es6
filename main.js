@@ -9,13 +9,15 @@ app.on('window-all-closed', () => {
 });
 
 app.on('ready', () => {
-  var win = new BrowserWindow({width: 800, height: 600, 'node-integration': true});
+  const win = new BrowserWindow({width: 800, height: 600, 'node-integration': true});
   win.loadURL(`file://${process.cwd()}/index.html`);
   win.webContents.openDevTools();
+  win.webContents.on('did-finish-load', () => {
+  });
 });
 
 const path = require("path");
-console.log("default appData", app.getPath("appData"));
-app.setPath("appData", path.join(__dirname, "./appData"));
-console.log("default userData", app.getPath("userData"));
-app.setPath("userData", path.join(__dirname, "./userData"));
+//console.log("default appData",  app.getPath("appData"));
+//console.log("default userData", app.getPath("userData"));
+app.setPath("appData",  path.join(__dirname, "./.appData"));
+app.setPath("userData", path.join(__dirname, "./.userData"));

@@ -53,3 +53,8 @@ export function example_1(params, ctx, done) {
       done(err);
     })
 }
+
+export function hello_world(params, ctx) {
+  console.log("Hello, world!", params);
+  return `Hello, ${JSON.stringify(params)}`;
+}

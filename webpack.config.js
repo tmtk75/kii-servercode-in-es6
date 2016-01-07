@@ -21,7 +21,7 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "bundle.[name].js",
+    filename: isProduction() ? `bundle.[name].min.js` : `bundle.[name].js`,
   },
 
   module: {

@@ -1,3 +1,5 @@
-import {example_1} from "./src/main.js"
+import * as a from "./src/main.js"
 
-global.example_1 = example_1;
+// Exports functions
+global.example_1   = a.example_1;
+global.hello_world = a.hello_world;

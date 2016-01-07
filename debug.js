@@ -1,11 +1,11 @@
 import launcher from "./launcher.js"
-import {example_1} from "./src/main.js"
+import * as main from "./src/main.js"
 
-//
-// You can write your code to invoke functions.
-//
-launcher.invoke(example_1, {
-  username: "foobar1",
-  password: "abc123",
-});
+window.Launcher = launcher;
+window.EntryNames = main;
 
+/*
+ * You can write a code here to be invoked immediatedly when reload.
+ * It's helpful for development & debug.
+ */
+//launcher.invoke(main.example_1, {hello: 1234});
