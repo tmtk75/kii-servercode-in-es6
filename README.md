@@ -65,6 +65,7 @@ Version: webpack 1.12.9
 ```
 
 You can see a window like this.
+
 <img width="480px" src="https://59c5872c.jp.kiiapps.com/api/x/s.d3d808a00022-0f9b-5e11-ddea-081a754a"/>
 
 
@@ -76,6 +77,7 @@ If you want to change it, `./debug.js` and `./release.js`.
 
 ## Debugging
 Step execution works! Set breakpoints wherever you want.
+
 <img width="480px" src="https://59c5872c.jp.kiiapps.com/api/x/s.350948a00022-ced9-5e11-266b-0d435104"/>
 
 
