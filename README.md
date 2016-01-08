@@ -74,12 +74,19 @@ You need to use `src/main.js` which exposes public entry names can be invoked.
 If you want to change it, `./debug.js` and `./release.js`.
 
 
+## Debugging
+Step execution works! Set breakpoints wherever you want.
+<img width="480px" src="https://59c5872c.jp.kiiapps.com/api/x/s.350948a00022-ced9-5e11-266b-0d435104"/>
+
+
 ## Testing
 ```
 $ npm test
 ```
 
 Test files are in `./test` directory.
+
+<img width="480px" src="https://59c5872c.jp.kiiapps.com/api/x/s.5a8848a00022-d4e9-5e11-366b-028d18b1"/>
 
 
 ## Linting
