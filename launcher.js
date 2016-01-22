@@ -31,6 +31,12 @@ export default {
       console.group("invoke");
       Logger.debug("invoke", `start ${f.name}`);
 
+      //
+      const ctx = {
+        getAccessToken: () => usr ? usr.getAccessToken() : null,
+        getAppAdminContext: () => adminCtx,
+      }
+
       // Sync
       if (f.length < 3) {
         let r = f.apply(null, [params, ctx])
@@ -59,10 +65,6 @@ export default {
         }
       });
 
-      const ctx = {
-        getAccessToken: () => usr ? usr.getAccessToken() : null,
-        getAppAdminContext: () => adminCtx,
-      }
       f.apply(null, [params, ctx, done])
       return donePromise;
     })
