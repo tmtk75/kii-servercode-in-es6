@@ -1,3 +1,4 @@
-export function summary(htmlStr) {
+// @flow
+export function summary(htmlStr: String): number {
   return htmlStr.length;
 }

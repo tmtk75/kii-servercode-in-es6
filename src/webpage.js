@@ -1,15 +1,18 @@
+// @flow
 import $ from "jquery";
 
 class WebPage {
-  constructor(urls) {
+  urls: Array<string>;
+
+  constructor(urls: Array<string>) {
     this.urls = urls;
   }
 
-  fetch() {
-    return Promise.all(this.urls.map(e => $.ajax(e)))
+  fetch(): Promise {
+    return Promise.all(this.urls.map(e => $.get(e)))
   }
 
-  static URLs(urls) {
+  static URLs(urls: Array<string>): WebPage {
     return new WebPage(urls);
   }
 }

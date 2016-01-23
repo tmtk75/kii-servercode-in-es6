@@ -1,3 +1,4 @@
+// @flow
 import WebPage from "./webpage.js"
 import {summary} from "./summary.js"
 // import _ from "underscore"  // doesn't work
@@ -18,7 +19,7 @@ const ensureGroup = (user, gname) =>
         return a ? a : KiiGroup.groupWithName(gname).save()
       })
 
-export function example_1(params, ctx, done) {
+export function example_1(params: Object, ctx: Context, done: (a: any) => void): void {
   let uname  = params.username || "foobar1"
   let passwd = params.password || "abc123"
   let bucket = ensureUser(uname, passwd)
@@ -31,7 +32,8 @@ export function example_1(params, ctx, done) {
     `access-token: ${ctx.getAccessToken()}`,
     `has-admin-context: ${new Boolean(ctx.getAppAdminContext())}`,
   ])
-  .then(::console.log);  // console.log.bind(console) in ES6
+  //.then(::console.log);  // console.log.bind(console) in ES6
+  .then(console.log.bind(console));
 
   Promise.all([bucket, pages])
     //.then(e => [e[0], e[1].map(r => r.length)])
@@ -54,7 +56,7 @@ export function example_1(params, ctx, done) {
     })
 }
 
-export function hello_world(params, ctx) {
+export function hello_world(params: Object, ctx: Context): string {
   console.log("Hello, world!", params);
   return `Hello, ${JSON.stringify(params)}`;
 }
