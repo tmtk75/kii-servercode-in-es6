@@ -8,10 +8,10 @@ describe("summary", _ => {
   });
 
   it("should retrun length", () => {
-    assert(3 === summary("abc"))
+    assert(({a:"ab"}).a === summary("abc"))
   });
 
   it("should retrun 0 for null", () => {
-    assert(0 === summary(null))
+    assert(1 === summary(null))
   });
 });
