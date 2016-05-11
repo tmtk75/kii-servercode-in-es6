@@ -30,6 +30,8 @@ module.exports = {
     ],
   },
 
+  target: "electron",
+
   externals: {
     jquery: "$",
   },

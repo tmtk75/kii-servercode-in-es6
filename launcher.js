@@ -1,6 +1,7 @@
 import Logger from "js-logger";
 import config from "./config.js";
-const remote   = window.require("remote");
+const remote = require('electron').remote
+
 
 Logger.useDefaults();
 Logger.setLevel(config.log_level || Logger.DEBUG);
