@@ -10,7 +10,7 @@ app.on('window-all-closed', () => {
 
 app.on('ready', () => {
   const win = new BrowserWindow({width: 800, height: 600, 'node-integration': true});
-  win.loadURL(`file://${process.cwd()}/index.html`);
+  win.loadURL(`file://${__dirname}/index.html`);
   win.webContents.openDevTools();
   win.webContents.on('did-finish-load', () => {
   });
